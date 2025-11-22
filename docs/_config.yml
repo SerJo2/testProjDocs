@@ -1,0 +1,12 @@
+title: "My Documentation"
+description: "Multi-language documentation"
+baseurl: "/your-repo-name"
+url: "https://username.github.io"
+
+# Настройки языков
+languages: ["en", "ru"]
+default_lang: "en"
+
+# Плагины
+plugins:
+  - jekyll-sitemap

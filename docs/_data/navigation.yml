@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+    {% include language-switcher.html %}
+    
+    <nav class="sidebar">
+        {% assign nav = site.data.navigation[page.lang] %}
+        {% for item in nav %}
+            <a href="{{ item.url | relative_url }}" 
+               {% if page.url == item.url %}class="active"{% endif %}>
+                {{ item.title }}
+            </a>
+        {% endfor %}
+    </nav>
+    
+    <main class="content">
+        {{ content }}
+    </main>
+</body>
+</html>

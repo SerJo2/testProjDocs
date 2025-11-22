@@ -1,0 +1,16 @@
+<div class="language-switcher">
+  <span>Language: </span>
+  {% for lang in site.languages %}
+    {% if lang == site.default_lang %}
+      <a href="{{ page.url | remove: '/' | prepend: site.baseurl }}"
+         {% if page.lang == lang %}class="active"{% endif %}>
+        {{ lang | upcase }}
+      </a>
+    {% else %}
+      <a href="{{ page.url | remove: '/' | prepend: lang | prepend: '/' | prepend: site.baseurl }}"
+         {% if page.lang == lang %}class="active"{% endif %}>
+        {{ lang | upcase }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
